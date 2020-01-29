@@ -1,5 +1,5 @@
 # test-app
 aplicacion en Angular 6
 
-## Ejecucion
+## Ejecución
 https://stackblitz.com/github/ccarvajalr/test-app
