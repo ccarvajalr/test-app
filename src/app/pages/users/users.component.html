@@ -1,0 +1,44 @@
+<br>
+<h5>Usuarios</h5>
+<br>
+<table class="striped centered bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Avatar</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor='let usuario of usuariosSort'>
+            <td>
+                {{usuario.id}}
+            </td>
+            <td>
+                {{usuario.first_name}}
+            </td>
+            <td>
+                {{usuario.last_name}}
+            </td>
+            <td>
+                {{usuario.email}}
+            </td>
+            <td>
+                <img src='{{usuario.avatar}}' width="40" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<ul class="pagination">
+    <li class="waves-effect"><i (click)='paginacion(current_page - 1)' class="material-icons">chevron_left</i>
+    </li>
+
+    <li *ngFor='let page of arr_tot;let i=index'>
+        <button [ngClass]="current_page === i + 1 ? 'btn-activo' :''" class="btn-flat waves-effect " (click)="paginacion(i + 1) ">{{i + 1}}</button>
+    </li>
+    <li class="waves-effect"><i (click)='paginacion(current_page + 1)' class="material-icons ">chevron_right</i></li>
+</ul>
